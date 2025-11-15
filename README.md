@@ -2,11 +2,11 @@
 
 > AI-powered Slack bot that generates imaginative childhood photos using a custom-trained Flux LoRA model via Replicate.
 
-## 🎯 Overview
+## Overview
 
 This project integrates a **Flux LoRA fine-tuned model** with Slack, allowing users to generate creative childhood photos through simple text prompts. The solution handles end-to-end workflow: dataset preparation, LoRA training on Replicate, and real-time image generation within Slack threads.
 
-## ✨ Features
+## Features
 
 - **Custom LoRA Training**: Fine-tune Flux model on personal childhood photo datasets
 - **Slack Integration**: Native Slack bot supporting slash commands and mentions
@@ -14,7 +14,7 @@ This project integrates a **Flux LoRA fine-tuned model** with Slack, allowing us
 - **Socket Mode**: No public URL required (works behind firewalls)
 - **Production Ready**: Retry logic, error handling, and structured logging
 
-## 🏗️ Architecture
+## Architecture
 
 ### Training Flow
 1. **Dataset Preparation**: Curated photos are zipped and uploaded to Replicate
@@ -27,7 +27,7 @@ This project integrates a **Flux LoRA fine-tuned model** with Slack, allowing us
 3. **Polling**: Async polling until image generation completes
 4. **Response**: Image posted back to Slack thread with direct URL
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.10+
@@ -108,7 +108,7 @@ INFO:slack_bolt.App:⚡️ Bolt app is running!
 
 The bot will acknowledge immediately and post the generated image in-thread once Replicate completes generation.
 
-## 🔧 Slack App Setup
+## Slack App Setup
 
 ### 1. Create Slack App
 - Visit [api.slack.com/apps](https://api.slack.com/apps)
@@ -156,7 +156,7 @@ Under **Event Subscriptions**, subscribe to:
 └── README.md
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run tests
@@ -166,13 +166,13 @@ pytest
 # Use scripts/mock_request.http with Insomnia/VS Code REST Client
 ```
 
-## 🔒 Security Notes
+## Security Notes
 
 - **Never commit `.env`**: It's excluded via `.gitignore`
 - **Rotate tokens**: If credentials are exposed, regenerate in Slack/Replicate dashboards
 - **Use Socket Mode**: More secure than exposing public URLs with ngrok
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 **Bot not responding:**
 - Verify Socket Mode is enabled in Slack App settings
@@ -189,17 +189,17 @@ pytest
 - Increase `--max-train-steps` if needed
 - Verify dataset upload completed successfully
 
-## 📚 References
+## References
 
 - [Flux LoRA Training Tutorial](https://www.youtube.com/watch?v=sNpQ9ULDMoo)
 - [Replicate API Documentation](https://replicate.com/docs)
 - [Slack Bolt Framework](https://slack.dev/bolt-python/)
 
-## 📝 License
+## License
 
-This project is part of a technical assignment for InspireWorks.
+This project is part of a technical assignment for Plivo.
 
-## 👤 Author
+## Author
 
 **Vedang Patil**
 - GitHub: [@vedang-patil-23](https://github.com/vedang-patil-23)
