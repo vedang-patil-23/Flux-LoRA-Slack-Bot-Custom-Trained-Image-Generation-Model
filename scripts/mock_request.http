@@ -1,0 +1,14 @@
+POST http://localhost:3000/slack/events
+Content-Type: application/json
+
+{
+  "type": "event_callback",
+  "event": {
+    "type": "app_mention",
+    "user": "U123",
+    "text": "<@BOT_USER_ID> Your 5-year-old self on a beach at sunset",
+    "channel": "C123",
+    "ts": "1712345678.123456"
+  }
+}
+

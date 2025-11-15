@@ -1,0 +1,54 @@
+FLUX LORA TRAINING ARCHITECTURE
+
+┌─────────────────┐
+│  Local Dataset  │
+│   (ved/*.jpg)   │
+└────────┬────────┘
+         │
+         │ zip_dataset()
+         ▼
+┌─────────────────┐
+│  ZIP Archive    │
+│  (dataset.zip)  │
+└────────┬────────┘
+         │
+         │ POST /files
+         ▼
+┌─────────────────┐
+│   Replicate     │
+│  File Storage    │
+│  (upload_url)   │
+└────────┬────────┘
+         │
+         │ POST /trainings
+         │ {model, input_images, ...}
+         ▼
+┌─────────────────┐
+│   Replicate      │
+│  Flux LoRA       │
+│  Training Job    │
+│  (status: start) │
+└────────┬────────┘
+         │
+         │ poll_training()
+         │ GET /trainings/{id}
+         │ (status: processing)
+         │
+         │ ... wait ...
+         │
+         │ (status: succeeded)
+         ▼
+┌─────────────────┐
+│  Trained LoRA    │
+│  Version ID      │
+│  vedang-patil-   │
+│  23/vedangp:...  │
+└────────┬────────┘
+         │
+         │ Save to config/
+         ▼
+┌─────────────────┐
+│  lora_version.  │
+│     json        │
+└─────────────────┘
+
