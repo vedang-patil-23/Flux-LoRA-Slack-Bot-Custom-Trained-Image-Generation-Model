@@ -189,6 +189,9 @@ pytest
 - Increase `--max-train-steps` if needed
 - Verify dataset upload completed successfully
 
+## Screenshot
+![Screenshot of Slack Bot](20.png)
+
 ## References
 
 - [Flux LoRA Training Tutorial](https://www.youtube.com/watch?v=sNpQ9ULDMoo)
